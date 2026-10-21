@@ -10,7 +10,7 @@ This is the live counterpart of **Paper 17**, *Why Everyday Weather Does Not Mov
 - **Climate state now**: the Oceanic Nino Index and the Nino 3.4 anomaly.
 - **Frozen conditions**: four tables, 159 conditions in all, each with where the series stands against its threshold, an event log, and a live record of resolved and pending outcomes.
 - **Registered decision experiment**: the strong-evidence conditions turned into implied paper positions by one fixed rule, scored daily against holding the same targets and SPY.
-- **A backtest panel** with the causal walk-forward of the same rule (no historical edge).
+- **A backtest panel** with the causal walk-forward of the same rule (admitted rows hit about 5 points above their base rate, mostly in 2020 to 2022, and the rule earns nothing).
 
 ## The four frozen tables
 | Table | Rows | Conditions | Series | Frozen | Role |

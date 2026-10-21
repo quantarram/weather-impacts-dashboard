@@ -65,7 +65,7 @@ still scored for the registered experiment, are on the <a href="archive.html">ar
 
 <section id="decisions"><div class="s-title">Registered decisions: what the frozen conditions imply, and what that earns</div>
 <div class="s-sub">The frozen climate conditions below are turned into paper positions by one fixed rule, registered before any result and scored from the first trading day after the freeze. These are implied positions in a research experiment, not advice. The rule covers the three tables frozen with it (batches 1, 3 and 4); batch 5 is a condition ledger and does not vote.
-The same rule run on rows admitted causally in the past shows no historical edge (see the backtest below), so the live record is the test.</div>
+The same rule run on rows admitted causally in the past shows hit rates above the base rate at the event level, concentrated in a few years, but no profit from the rule itself (see the backtest below), so the live record is the test.</div>
 <div class="c-label">Implied positions from the next trading day</div><div class="table-wrap"><table id="dtoday"></table></div>
 <div class="note" id="dnote"></div>
 <div class="cards" id="dcards" style="margin-top:16px"></div>
@@ -143,9 +143,9 @@ cards.appendChild(card('Nino 3.4 monthly anomaly', E.state, ensoCls, sgn(E.nino3
   if (B.market) { const c = B.market, p = c.portfolio || {};
     b += row('Control: the program&rsquo;s own market predictors, extreme tail', c.extreme, p['extreme tail q_X>=0.9']) + row('Control: market predictors, all admitted', c.admitted, p['all admitted']); }
   el('dbtable').innerHTML = b;
-  el('dbnote').innerHTML = '<b>Reading it.</b> Rows admitted by the survivor filter with only past outcomes hit more often than the base rate in the extreme tail, but the effect is small against trade-level variance (about 16 points of excess-return sd per trade), is clustered in 2019&ndash;2023, and does not become a positive return: ' +
+  el('dbnote').innerHTML = '<b>Reading it.</b> Rows admitted by the survivor filter with only past outcomes hit more often than the base rate (about 5 points over all admitted rows and 9.5 in the extreme tail, in 8 of 11 years), but 64% of the admitted events fall in 2020&ndash;2022, the effect is small against trade-level variance (about 17 points of excess-return sd per trade), it is nil at the 252 and 300-day horizons, and it does not become a positive return: ' +
     'the rule earned ' + (B.climate ? pct(B.climate.portfolio['extreme tail q_X>=0.9'].strategy_full.ann) : '') + ' a year in the extreme tail against ' + (B.climate ? pct(B.climate.portfolio['extreme tail q_X>=0.9'].hold_same_full.ann) : '') + ' for holding the same targets. Excess is measured against each target&rsquo;s own mean return in the entry year, signed by the position. ' +
-    'The market control shows the same shape: a hit-rate edge that mostly reproduces long drift. The ENSO batch (first table) is negative on its own. 164 of the 188 extreme-tail trades are median-split direction bets, so a few points of hit rate buy little.';
+    'The market control shows a similar hit-rate edge and no portfolio gain. The ENSO batch (first table) loses money on its own (15 extreme-tail trades). 208 of the 226 extreme-tail trades are median-split direction bets, so a few points of hit rate buy little. Horizons are in the target&rsquo;s own trading days.';
   el('dreg').innerHTML = '<b>Hypothesis.</b> ' + Dn.registry.hypothesis + '<br><b>Rule.</b> ' + Dn.registry.rule + '<br><b>Benchmarks.</b> ' + Dn.registry.benchmarks + '<br><b>Evidence of an edge.</b> ' + Dn.registry.evidence_of_edge + '<br><b>History.</b> ' + Dn.registry.history + '<br><b>Not claimed.</b> ' + Dn.registry.not_claimed;
 }
 

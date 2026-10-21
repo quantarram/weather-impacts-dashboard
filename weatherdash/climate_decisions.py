@@ -7,7 +7,7 @@ The rule (frozen 2026-10-11 and re-registered unchanged on 2026-10-14 for the re
 Benchmarks: the same targets held long at the same equal weights over the same windows (same-instrument buy and hold), SPY, and the drift-adjusted excess (each position's return minus the target's own mean daily return
 since 2013, signed by the position). Reviews at 125, 250 and 500 trading days. Evidence of an edge only if, at a review, the net annualised return is positive, the drift-adjusted excess is positive, the beta-adjusted
 alpha against SPY is positive, and both halves of the sample are positive. Otherwise: no evidence of an edge. No significance test is used; a null result does not show that no edge exists anywhere.
-The same rule, run on rows admitted causally (each 1 January, from outcomes already resolved), is in data/cpe_climate/decision_backtest.json; it shows no historical edge, so the live record is the test."""
+The same rule, run on rows admitted causally (each 1 January, from outcomes already resolved), is in data/cpe_climate/decision_backtest.json; it shows event hit rates above base (mostly 2020-2022) but no profit from the rule, so the live record is the test."""
 import json
 import os
 
@@ -30,7 +30,7 @@ REGISTRY = {
     "benchmarks": "same targets held long at the same weights over the same windows; SPY; drift-adjusted excess (position return minus the target's own mean daily return since 2013, signed by the position)",
     "reviews_trading_days": REVIEWS,
     "evidence_of_edge": "At a review: positive net annualised return, positive drift-adjusted excess, positive beta-adjusted alpha against SPY, and positive in both halves. Otherwise no evidence of an edge.",
-    "history": "The same rule on causally admitted rows (2016-2026) returned -1.4% a year in the extreme tail (Sharpe -0.08) and -2.4% a year for all admitted rows; see the backtest panel. The live record is the test.",
+    "history": "The same rule on causally admitted rows (2016-2026, horizons in trading days) returned -0.65% a year in the extreme tail (Sharpe -0.04) and -1.1% a year for all admitted rows, while the admitted rows hit about 5 points more often than their base rate (9.5 in the extreme tail), mostly in 2020-2022; see the backtest panel. The live record is the test.",
     "not_claimed": "No significance test is used, positions are paper positions, and a null result does not show that no edge exists anywhere.",
 }
 
