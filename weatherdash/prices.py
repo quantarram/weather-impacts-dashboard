@@ -11,6 +11,20 @@ LOG = os.path.join(ROOT, "data", "prices_log.csv")
 UA = {"User-Agent": "Mozilla/5.0 (weather-impacts-dashboard)"}
 
 
+def strip_forming(df, meta, now=None):
+    """Drop the bar of a session that is still open: Yahoo returns today's intraday price as today's close, and GitHub's schedule lag now lands
+    this run inside the US session. The bar is dated by the exchange-local date of the current session's end."""
+    end = ((meta.get("currentTradingPeriod") or {}).get("regular") or {}).get("end")
+    if not end or df.empty:
+        return df
+    now = time.time() if now is None else now
+    if now >= end:
+        return df
+    tz = meta.get("exchangeTimezoneName", "America/New_York")
+    session = pd.Timestamp(end, unit="s", tz="UTC").tz_convert(tz).normalize().tz_localize(None)
+    return df[df["date"] != session]
+
+
 def fetch_one(sym, rng="3mo"):
     r = requests.get(f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}", params={"range": rng, "interval": "1d"}, headers=UA, timeout=30)
     r.raise_for_status()
@@ -19,7 +33,7 @@ def fetch_one(sym, rng="3mo"):
     q = res["indicators"]["quote"][0]["close"]
     adj = (res["indicators"].get("adjclose") or [{}])[0].get("adjclose", q)
     df = pd.DataFrame({"date": ts, "ticker": sym, "close": q, "adjclose": adj}).dropna(subset=["close"])
-    return df
+    return strip_forming(df, res["meta"])
 
 
 def load():
