@@ -18,3 +18,4 @@ entry_date,X,tau_past,q_X,direction,kind,x_move,x_threshold,table_sha
 2026-10-12,PNA_mean,126,0.8,bearish,ongoing_at_freeze,-122.97999999999956,-67.29000000000092,e35574c156
 2026-10-12,PNA_mean,126,0.9,bearish,ongoing_at_freeze,-122.97999999999956,-97.68900000000244,e35574c156
 2026-10-12,PNA_mean,252,0.6,bearish,ongoing_at_freeze,-89.95000000000118,-52.98799999999463,e35574c156
+2026-11-02,NINO4_mean,252,0.9,bullish,onset,109.99000000000126,108.90500000000083,e35574c156
