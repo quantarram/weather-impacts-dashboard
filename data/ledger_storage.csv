@@ -1205,3 +1205,6 @@ issue_date,code,week_ending,lead_days,chg_fc_bcf,norm_bcf,status,chg_obs_bcf,sou
 2026-11-04,R32,2026-11-13,9,7.2,-7.6,PENDING,,live
 2026-11-04,R35,2026-10-30,-5,5.8,1.4,PENDING,,live
 2026-11-04,R35,2026-11-13,9,4.3,-0.4,PENDING,,live
+2026-11-05,R31,2026-11-13,8,3.2,-12.2,PENDING,,live
+2026-11-05,R32,2026-11-13,8,5.9,-7.6,PENDING,,live
+2026-11-05,R35,2026-11-13,8,3.8,-0.4,PENDING,,live
