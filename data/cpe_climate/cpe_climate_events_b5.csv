@@ -7,3 +7,4 @@ entry_date,X,tau_past,q_X,direction,kind,x_move,x_threshold,table_sha
 2026-10-12,TXPDSI_chg,21,0.9,bearish,ongoing_at_freeze,-1.2999999999999998,-0.76,9e61a844da
 2026-10-12,TXPDSI_mean,21,0.95,bearish,ongoing_at_freeze,-122.24000000000342,-90.33200000000124,9e61a844da
 2026-10-12,TXPDSI_mean,252,0.95,bearish,ongoing_at_freeze,-1114.3499999999963,-860.758000000018,9e61a844da
+2026-11-12,DLTPDSI_chg,300,0.9,bearish,onset,-3.22,-3.1425,9e61a844da
