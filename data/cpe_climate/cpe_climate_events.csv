@@ -10,3 +10,4 @@ entry_date,X,tau_past,q_X,direction,kind,x_move,x_threshold,table_sha
 2026-10-12,ONI_mean,126,0.75,bullish,ongoing_at_freeze,103.06999999999988,59.92250000000007,5b0b64b2ab
 2026-10-12,ONI_mean,126,0.8,bullish,ongoing_at_freeze,103.06999999999988,73.19199999999937,5b0b64b2ab
 2026-10-15,SOI_chg,300,0.9,bearish,onset,-2.6,-1.8,5b0b64b2ab
+2026-11-16,NINO34_chg,21,0.95,bullish,onset,0.41000000000000014,0.41000000000000003,5b0b64b2ab
